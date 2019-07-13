@@ -1,0 +1,12 @@
+{
+  "name": "get-telegram-photo",
+  "description": "Fetch Telegram user or group photo from username, the (probably) wrong way",
+  "version": "1.0.0",
+  "repository": "git@github.com:SurabayaJS/get-telegram-photo.git",
+  "author": "Griko Nibras <grikomsn@gmail.com>",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "got": "^9.6.0"
+  },
+  "license": "MIT"
+}
