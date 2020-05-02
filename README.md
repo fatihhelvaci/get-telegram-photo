@@ -1,13 +1,42 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 [![get-telegram-photo](./header.png)](.)
 
+## Endpoints
+
+- <https://get-telegram-photo.now.sh>
+- <https://gtp.now.sh>
+
 ## Usage
 
-- **User** <br />
-  <https://get-telegram-photo.now.sh/griko_nibras>
-- **Group (w/ extension)** <br />
-  <https://get-telegram-photo.now.sh/surabayajs.jpg>
+**User**
+
+- <https://get-telegram-photo.now.sh/griko_nibras>
+- <https://gtp.now.sh/griko_nibras>
+
+**Group (with `.jpg` extension)**
+
+- <https://get-telegram-photo.now.sh/surabayajs.jpg>
+- <https://gtp.now.sh/surabayajs.jpg>
+
+## Responses
+
+**Fetch for username [`telegram`](https://t.me/telegram)**
+
+<a href="https://gtp.now.sh/telegram"><img src="https://gtp.now.sh/telegram" width="160" /></a><br />
+
+**Fetch for username [`surabayajs`](https://t.me/surabayajs) with `.jpg` extension**
+
+<a href="https://gtp.now.sh/surabayajs.jpg"><img src="https://gtp.now.sh/surabayajs.jpg" width="160" /></a><br />
+
+**Invalid or non-existent username**
+
+```json
+{
+  "statusCode": 500,
+  "error": "username not found"
+}
+```
 
 ## How it works
 
