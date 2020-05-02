@@ -14,6 +14,12 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://github.com/surabayajs/get-telegram-photo"
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
