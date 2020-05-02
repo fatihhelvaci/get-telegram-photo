@@ -1,12 +1,37 @@
 {
   "name": "get-telegram-photo",
-  "description": "Fetch Telegram user or group photo from username, the (probably) wrong way",
-  "version": "1.0.0",
-  "repository": "git@github.com:SurabayaJS/get-telegram-photo.git",
-  "author": "Griko Nibras <grikomsn@gmail.com>",
+  "description": "Fetch Telegram user/group avatars, the (probably) wrong way",
+  "version": "2.0.0",
+  "repository": "git@github.com:surabayajs/get-telegram-photo.git",
+  "author": "Griko Nibras <git@griko.id>",
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "format": "yarn format:api && yarn format:index",
+    "format:api": "prettier --write \"api/**/*.{js,ts}\"",
+    "format:index": "prettier --write \"*.{js,json,md}\""
+  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "got": "^9.6.0"
+    "got": "^11.1.0"
+  },
+  "devDependencies": {
+    "@now/node": "^1.5.1",
+    "@types/cheerio": "^0.22.18",
+    "@types/got": "^9.6.10",
+    "all-contributors-cli": "^6.14.2",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn contributors:generate"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "license": "MIT"
 }

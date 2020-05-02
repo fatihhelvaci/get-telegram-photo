@@ -1,23 +1,26 @@
 {
-  "version": 2,
-  "name": "get-telegram-photo",
-  "alias": ["get-telegram-photo"],
-  "builds": [
+  "github": {
+    "autoAlias": true,
+    "enabled": true
+  },
+  "headers": [
     {
-      "src": "index.js",
-      "use": "@now/node"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ],
-  "github": {
-    "enabled": true,
-    "autoAlias": true
-  },
-  "public": true,
-  "regions": ["all"],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/.*",
-      "headers": { "Access-Control-Allow-Origin": "*" }
+      "source": "/(.*)",
+      "destination": "/api/$1"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "public": true
 }

@@ -1,21 +1,35 @@
-# get-telegram-photo
+<!-- markdownlint-disable MD033 MD041 -->
 
-Fetch Telegram user or group photo from username, the (probably) wrong way
+[![get-telegram-photo](./header.png)](.)
 
-![🐶](https://www.holidogtimes.com/wp-content/uploads/2016/09/Untitled-design4.png)
+## Usage
+
+- **User** <br />
+  <https://get-telegram-photo.now.sh/griko_nibras>
+- **Group (w/ extension)** <br />
+  <https://get-telegram-photo.now.sh/surabayajs.jpg>
 
 ## How it works
 
-Using the `.tgme_page_photo_image` selector to find the image URL on the Telegram user or group page fetched using `cheerio`
+Using [`got`](https://github.com/sindresorhus/got), it fetches the user/group username page on <https://t.me> and search the `.tgme_page_photo_image` selector using [`cheerio`](https://github.com/cheeriojs/cheerio). If exist, `cheerio` gets the image URL, download the image and re-serves the content and headers.
 
-## Endpoint
+## Contributors
 
-<https://get-telegram-photo.now.sh>
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-## Example
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://griko.id"><img src="https://avatars1.githubusercontent.com/u/8220954?v=4" width="100px;" alt=""/><br /><sub><b>Griko Nibras</b></sub></a><br /><a href="https://github.com/surabayajs/get-telegram-photo/commits?author=grikomsn" title="Code">💻</a> <a href="#maintenance-grikomsn" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
 
-<https://get-telegram-photo.now.sh/?u=surabayajs>
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
 
-MIT
+[MIT License, Copyright (c) 2020 SurabayaJS](./LICENSE)
