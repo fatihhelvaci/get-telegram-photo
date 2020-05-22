@@ -58,8 +58,7 @@ export async function getAvatarImageHandler(req: NowRequest, res: NowResponse) {
 
     res.send(img.buffer)
   } catch ({ statusCode = 500, message = 'internal server error' }) {
-    res.statusCode = statusCode
-    res.json({
+    res.status(statusCode).json({
       statusCode,
       error: message,
     })
