@@ -1,66 +1,63 @@
-import { NowRequest, NowResponse } from '@now/node'
-import cheerio from 'cheerio'
-import got from 'got'
+import { NowApiHandler } from "@vercel/node";
+import cheerio from "cheerio";
+import got from "got";
 
-export async function getAvatarImage(username: string) {
-  const response = await got(`https://t.me/${username}`)
+export const getAvatarImage = async (username: string) => {
+  const response = await got(`https://t.me/${username}`);
 
-  const $$ = cheerio.load(response.body)
-  const $image = $$('.tgme_page_photo_image')
+  const $$ = cheerio.load(response.body);
+  const $image = $$(".tgme_page_photo_image");
 
   if ($image.html() === null) {
     throw {
-      message: 'username not found',
-    }
+      message: "username not found",
+    };
   }
 
-  const imageUrl = $image.attr('src')
-  const { headers, rawBody } = await got(imageUrl)
-
-  const contentType = headers['content-type']
-  const contentLength = headers['content-length']
+  const imageUrl = $image.attr("src");
+  const { headers, rawBody } = await got(imageUrl);
 
   return {
     buffer: rawBody,
-    contentType,
-    contentLength,
+    contentType: headers["content-type"],
+    contentLength: headers["content-length"],
     headers,
-  }
-}
+  };
+};
 
-export async function getAvatarImageHandler(req: NowRequest, res: NowResponse) {
-  const query = `${req.query.query}` || null
+export const getAvatarImageHandler: NowApiHandler = async (req, res) => {
+  const query = `${req.query.query}` || null;
 
-  const regex = /^([a-zA-Z0-9_]{4,})(?:\.jpg)?$/
-  const captured = regex.exec(query)
+  const regex = /^([a-zA-Z0-9_]{4,})(?:\.jpg)?$/;
+  const captured = regex.exec(query);
 
   try {
     if (!captured) {
       throw {
-        message: 'invalid username',
-      }
+        message: "invalid username",
+      };
     }
 
-    const username = captured[1]
-    const img = await getAvatarImage(username)
+    const username = captured[1];
+    const img = await getAvatarImage(username);
 
     const pluckHeaders = [
-      'content-type',
-      'content-length',
-      'cache-control',
-      'expires',
-      'last-modified',
-      'accept-ranges',
-    ]
+      "content-type",
+      "content-length",
+      "cache-control",
+      "expires",
+      "last-modified",
+      "accept-ranges",
+    ];
     for (const header of pluckHeaders) {
-      res.setHeader(header, img.headers[header])
+      res.setHeader(header, img.headers[header]);
     }
 
-    res.send(img.buffer)
-  } catch ({ statusCode = 500, message = 'internal server error' }) {
+    res.send(img.buffer);
+  } catch ({ statusCode = 500, message = "internal server error" }) {
     res.status(statusCode).json({
       statusCode,
       error: message,
-    })
+    });
   }
-}
+};
