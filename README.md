@@ -11,30 +11,21 @@
 
 **User**
 
-- <https://get-telegram-photo.now.sh/griko_nibras>
-- <https://gtp.now.sh/griko_nibras>
-
-**Group (with `.jpg` extension)**
-
-- <https://get-telegram-photo.now.sh/surabayajs.jpg>
-- <https://gtp.now.sh/surabayajs.jpg>
+- <https://get-telegram-photo.now.sh/surabayajs>
+- <https://gtp.now.sh/surabayajs>
 
 ## Responses
 
-**Fetch for username [`telegram`](https://t.me/telegram)**
+**Fetch for username [`surabayajs`](https://t.me/surabayajs)**
 
-<a href="https://gtp.now.sh/telegram"><img src="https://gtp.now.sh/telegram" width="160" /></a><br />
-
-**Fetch for username [`surabayajs`](https://t.me/surabayajs) with `.jpg` extension**
-
-<a href="https://gtp.now.sh/surabayajs.jpg"><img src="https://gtp.now.sh/surabayajs.jpg" width="160" /></a><br />
+<a href="https://gtp.now.sh/surabayajs"><img src="https://gtp.now.sh/surabayajs" width="160" /></a><br />
 
 **Invalid or non-existent username**
 
 ```json
 {
-  "statusCode": 500,
-  "error": "username not found"
+  "status": 500,
+  "message": "username 'some_username' not found"
 }
 ```
 
@@ -51,11 +42,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://griko.id"><img src="https://avatars1.githubusercontent.com/u/8220954?v=4" width="100px;" alt=""/><br /><sub><b>Griko Nibras</b></sub></a><br /><a href="https://github.com/surabayajs/get-telegram-photo/commits?author=grikomsn" title="Code">💻</a> <a href="#maintenance-grikomsn" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://griko.id"><img src="https://avatars1.githubusercontent.com/u/8220954?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Griko Nibras</b></sub></a><br /><a href="https://github.com/surabayajs/get-telegram-photo/commits?author=grikomsn" title="Code">💻</a> <a href="#maintenance-grikomsn" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

@@ -22,8 +22,8 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/api/$1"
+      "source": "/:username",
+      "destination": "/api/handler"
     }
   ],
   "cleanUrls": true,

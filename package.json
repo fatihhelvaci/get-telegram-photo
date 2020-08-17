@@ -1,7 +1,7 @@
 {
   "name": "get-telegram-photo",
   "description": "Fetch Telegram user/group avatars, the (probably) wrong way",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "repository": "git@github.com:surabayajs/get-telegram-photo.git",
   "author": "Griko Nibras <git@griko.id>",
   "scripts": {
@@ -13,11 +13,10 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "got": "^11.5.2"
+    "cross-fetch": "^3.0.5"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.21",
-    "@types/got": "^9.6.11",
     "@vercel/node": "^1.7.4",
     "all-contributors-cli": "^6.17.2",
     "husky": "^4.2.5",
@@ -26,7 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn contributors:generate && lint-staged"
     }
   },
   "lint-staged": {
