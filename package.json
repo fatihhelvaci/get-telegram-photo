@@ -19,7 +19,7 @@
     "@types/cheerio": "^0.22.21",
     "@types/got": "^9.6.11",
     "@vercel/node": "^1.7.4",
-    "all-contributors-cli": "^6.17.0",
+    "all-contributors-cli": "^6.17.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
